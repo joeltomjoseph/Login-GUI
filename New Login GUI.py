@@ -27,12 +27,14 @@ def login():
             if username == givenUsername and password == givenPassword:
                 completed()
                 loginwin.destroy()
-                
+    
     tk.Label(loginwin, text="Username**").pack()
+    global enterusername
     enterusername = tk.Entry(loginwin).pack()
     tk.Label(loginwin).pack()
     tk.Label(loginwin, text="Password**").pack()
-    enterpassword = tk.Entry(loginwin).pack()
+    global enterpassword
+    enterpassword = tk.Entry(loginwin, show='*').pack()
     tk.Label(loginwin).pack()
     tk.Button(loginwin, text="Login", command = clickedlogin).pack()
 
@@ -42,10 +44,10 @@ def register():
     regwin.title("Register")
     regwin.geometry("200x200")
 
-    tk.Label(loginwin, text="Please enter a new Username").pack()
+    tk.Label(regwin, text="Please enter a new Username").pack()
     newusername = tk.Entry(loginwin).pack()
     
-    tk.Label(loginwin, text="Please enter a new Password").pack()
+    tk.Label(regwin, text="Please enter a new Password").pack()
     newpassword = tk.Entry(loginwin).pack()
 
 
