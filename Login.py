@@ -53,25 +53,24 @@ def register():
     regwin.geometry("250x200")
 
     def clickedregister():
-        newusername = str(newusernameentry.get())
-        newpassword = str(newpasswordentry.get())
-
+        newusername = str(newUsernameentry.get())
+        newpassword = str(newPasswordentry.get())
+        
         #Adding new username and password to text file
         open_File = open("logins.txt","a")
-        open_File.write(newusername + "" + newpassword)
+        open_File.write(newusername + " " + newpassword)
+        open_File.close()
     
     tk.Label(regwin, text="Please enter a new Username", font = 20).pack()
-    global newusernameentry
-    newusernameentry = tk.Entry(regwin).pack()
+    global newUsernameentry
+    newUsernameentry = tk.Entry(regwin).pack()
     
     tk.Label(regwin, text="Please enter a new Password", font = 20).pack()
-    global newpasswordentry
-    newpasswordentry = tk.Entry(regwin).pack()
+    global newPasswordentry
+    newPasswordentry = tk.Entry(regwin).pack()
     
     tk.Label(regwin).pack()
     tk.Button(regwin, text="Register", font = 30, command = clickedregister).pack()
-    #Adding new username and password to text file
-        
 
 '''Main Program'''
 r = tk.Tk()
