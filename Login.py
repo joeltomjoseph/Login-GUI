@@ -16,7 +16,7 @@ def completed():
 def login():
     loginwin = tk.Tk()
     loginwin.title("Login")
-    loginwin.geometry("200x200")
+    loginwin.geometry("250x200")
 
     def clickedlogin():
         givenUsername = str(enterusername.get())
@@ -32,30 +32,39 @@ def login():
                 tk.Label(loginwin).pack()
                 tk.Label(loginwin, text="Incorrect Credentials!! Try Again!!", font = 20).pack()
     
-    tk.Label(loginwin, text="Username**").pack()
+    tk.Label(loginwin, text="Username**", font = 20).pack()
     global enterusername
     enterusername = tk.Entry(loginwin)
     enterusername.pack()
     tk.Label(loginwin).pack()
-    tk.Label(loginwin, text="Password**").pack()
+    tk.Label(loginwin, text="Password**", font = 20).pack()
     global enterpassword
     enterpassword = tk.Entry(loginwin)
     enterpassword.pack()
     tk.Label(loginwin).pack()
-    tk.Button(loginwin, text="Login", command = clickedlogin).pack()
+    tk.Button(loginwin, text="Login", command = clickedlogin, font = 30).pack()
 
 ###this is for the register button to open a new window###
 def register():
     regwin = tk.Tk()
     regwin.title("Register")
-    regwin.geometry("200x200")
+    regwin.geometry("250x200")
 
-    tk.Label(regwin, text="Please enter a new Username").pack()
-    newusername = tk.Entry(regwin).pack()
+    def clickedregister():
+        newusername = str(newusernameentry.get())
+        newpassword = str(newpasswordentry.get())
+        
     
-    tk.Label(regwin, text="Please enter a new Password").pack()
-    newpassword = tk.Entry(regwin).pack()
-
+    tk.Label(regwin, text="Please enter a new Username", font = 20).pack()
+    newusernameentry = tk.Entry(regwin).pack()
+    
+    tk.Label(regwin, text="Please enter a new Password", font = 20).pack()
+    newpasswordentry = tk.Entry(regwin).pack()
+    
+    tk.Label(regwin).pack()
+    tk.Button(regwin, text="Register", font = 30, command = clickedregister).pack()
+    #Adding new username and password to text file
+        
 
 '''Main Program'''
 r = tk.Tk()
