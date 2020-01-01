@@ -60,11 +60,12 @@ def register():
 '''Main Program'''
 r = tk.Tk()
 r.title("My new GUI")
-r.geometry("400x400")
+r.geometry("400x200")
 
-tk.Label(r, text="Welcome to my program!").pack()
 tk.Label(r).pack()
-tk.Button(r, text="Login", command = login).pack()
+tk.Label(r, text="Welcome to my program!", font = 30).pack()
 tk.Label(r).pack()
-tk.Button(r, text="Register", command = register).pack()
+tk.Button(r, text="Login", command = login, font = 30).pack()
+tk.Label(r).pack()
+tk.Button(r, text="Register", command = register, font = 30).pack()
 r.mainloop()
