@@ -21,8 +21,10 @@ def login():
     def clickedlogin():
         givenUsername = str(enterusername.get())
         givenPassword = str(enterpassword.get())
+        
         #checking username and password against a txt file
-        for line in open("logins.txt","r").readlines():
+        txtRead = open("logins.txt","r")
+        for line in txtRead.readlines():
             login_info = line.split()
             if login_info[0] == givenUsername and login_info[1] == givenPassword:
                 loginwin.destroy()
@@ -39,7 +41,7 @@ def login():
     tk.Label(loginwin).pack()
     tk.Label(loginwin, text="Password**", font = 20).pack()
     global enterpassword
-    enterpassword = tk.Entry(loginwin)
+    enterpassword = tk.Entry(loginwin, show = "*")
     enterpassword.pack()
     tk.Label(loginwin).pack()
     tk.Button(loginwin, text="Login", command = clickedlogin, font = 30).pack()
@@ -53,12 +55,17 @@ def register():
     def clickedregister():
         newusername = str(newusernameentry.get())
         newpassword = str(newpasswordentry.get())
-        
+
+        #Adding new username and password to text file
+        open_File = open("logins.txt","a")
+        open_File.write(newusername + "" + newpassword)
     
     tk.Label(regwin, text="Please enter a new Username", font = 20).pack()
+    global newusernameentry
     newusernameentry = tk.Entry(regwin).pack()
     
     tk.Label(regwin, text="Please enter a new Password", font = 20).pack()
+    global newpasswordentry
     newpasswordentry = tk.Entry(regwin).pack()
     
     tk.Label(regwin).pack()
