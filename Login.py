@@ -1,5 +1,4 @@
 import tkinter as tk
-from tkinter import *
 
 '''Functions'''
 ###this is for the completed login window###
@@ -19,8 +18,8 @@ def login():
     loginwin.geometry("250x200")
 
     def clickedlogin():
-        givenUsername = str(enterusername.get())
-        givenPassword = str(enterpassword.get())
+        givenUsername = enterusername.get()
+        givenPassword = enterpassword.get()
         
         #checking username and password against a txt file
         txtRead = open("logins.txt","r")
@@ -35,12 +34,10 @@ def login():
                 tk.Label(loginwin, text="Incorrect Credentials!! Try Again!!", font = 20).pack()
     
     tk.Label(loginwin, text="Username**", font = 20).pack()
-    global enterusername
     enterusername = tk.Entry(loginwin)
     enterusername.pack()
     tk.Label(loginwin).pack()
     tk.Label(loginwin, text="Password**", font = 20).pack()
-    global enterpassword
     enterpassword = tk.Entry(loginwin, show = "*")
     enterpassword.pack()
     tk.Label(loginwin).pack()
@@ -53,21 +50,21 @@ def register():
     regwin.geometry("250x200")
 
     def clickedregister():
-        newusername = str(newUsernameentry.get())
-        newpassword = str(newPasswordentry.get())
+        newusername = newUsernameentry.get()
+        newpassword = newPasswordentry.get()
         
         #Adding new username and password to text file
         open_File = open("logins.txt","a")
-        open_File.write(newusername + " " + newpassword)
+        open_File.write("\n" + newusername + " " + newpassword)
         open_File.close()
     
     tk.Label(regwin, text="Please enter a new Username", font = 20).pack()
-    global newUsernameentry
-    newUsernameentry = tk.Entry(regwin).pack()
+    newUsernameentry = tk.Entry(regwin)
+    newUsernameentry.pack()
     
     tk.Label(regwin, text="Please enter a new Password", font = 20).pack()
-    global newPasswordentry
-    newPasswordentry = tk.Entry(regwin).pack()
+    newPasswordentry = tk.Entry(regwin)
+    newPasswordentry.pack()
     
     tk.Label(regwin).pack()
     tk.Button(regwin, text="Register", font = 30, command = clickedregister).pack()
