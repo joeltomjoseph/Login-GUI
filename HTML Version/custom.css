@@ -8,6 +8,19 @@
     margin: auto;
 }
 
+nav {
+    margin-bottom: 0px;
+}
+
+body {
+    padding: 0px;
+}
+
+.button {
+    background-color: rgb(200, 200, 200);
+    width: 200px;
+}
+
 h1 {
     color: rgb(235, 235, 235);
     letter-spacing: 15px;
@@ -39,4 +52,5 @@ header {
 
 .nav-bar {
     background-color: #3b6978;
+    margin-top: auto;
 }
