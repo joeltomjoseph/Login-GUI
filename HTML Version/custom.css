@@ -37,7 +37,11 @@ body {
 .button {
     background-color: rgb(200, 200, 200);
     width: 200px;
-    
+    transition: 0.5s;
+}
+
+.button:hover {
+    box-shadow: 0 0 10px black;
 }
 
 h1 {
@@ -59,6 +63,11 @@ input {
     margin: auto;
     text-align: center;
     padding: 6%;
+    transition: 0.5s;
+}
+
+input:hover {
+    box-shadow: 0 0 5px black;
 }
 
 li {
