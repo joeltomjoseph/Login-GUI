@@ -8,6 +8,20 @@
     margin: auto;
 }
 
+html {
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    background: linear-gradient(to bottom, #1b262c, #1c5f83);
+}
+
+/*body {
+    background-image: linear-gradient(to bottom left, #1b262c, #1d4f69);
+}
+*/
+
 .gitlogo {
     margin: 0px;
 }
