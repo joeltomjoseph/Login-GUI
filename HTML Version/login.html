@@ -6,19 +6,40 @@
         <!--Linking CSS Files for Styling and JQuery from Google via CDN!-->
         <link rel="stylesheet" href="mvp.css">
         <link rel="stylesheet" href="custom.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
         <!--Title-->
         <title>Login</title>
     </head>
 
     <script>
-        //Used to check if username and password are correct from a seperate document!
+        //Used to check if username and password are correct from an array!
         function login() {
           var username = document.getElementById("username").value;
           var password = document.getElementById("password").value;
           //document.getElementById("test").innerHTML = username + " " + password;
-          
-          
+
+          //These are the correct credentials to be checked with the user inputed ones!
+          var credentials = [
+              {
+                  username: "joel",
+                  password: "bruh"
+              },
+              {
+                  username: "joel12",
+                  password: "bruh12"
+              },
+          ]
+          for (i = 0; i < credentials.length; i++) {
+              if (username == credentials[i].username && password == credentials[i].password) {
+                  document.getElementById("response").innerHTML = "You have been Logged in! REDIRECTING..."
+                  window.location.replace("#"); //Replace the # to change the redirect location!
+                  return
+              }    
+          }
+          //If wrong this will happen!
+          document.getElementById("response").innerHTML = "UserName or Password INCORRECT! Try Again..."
+
+          //Other attempt that didnt really work.
             //const fs = require("fs")
             //var credentials = fs.FileRead("logins.txt", "utf-8")
             //for (const line in credentials) {
@@ -55,6 +76,7 @@
                     <li>Enter your Password</li>
                     <li><input type="password" id = password placeholder="........."></li>
                     <li><input type="button" class="button" onclick="login()" value="Login"></li>
+                    <li id="response"></li>
                 </ul>
             </div>
         <!--<p id="test"></p>-->
