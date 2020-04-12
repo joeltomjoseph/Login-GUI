@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Linking CSS Files for Styling and JQuery from Google via CDN!-->
+        <link rel="stylesheet" href="mvp.css">
+        <link rel="stylesheet" href="custom.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!--Title-->
+        <title>Login</title>
+    </head>
+
+    <script>
+        //Used to check if username and password are correct from a seperate document!
+        function login() {
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+          //document.getElementById("test").innerHTML = username + " " + password;
+          
+          
+            //const fs = require("fs")
+            //var credentials = fs.FileRead("logins.txt", "utf-8")
+            //for (const line in credentials) {
+              //var login_info = line.split(" ")
+              //if (login_info[0] == username && login_info[1] == password) {
+              //    document.getElementById("test").innerHTML = "bruh moment"; 
+              //}
+              //else {
+              //  document.getElementById("test").innerHTML = "sad moment";
+              //}
+            //}
+        }
+    </script>
+
+    <body style="background-color: #1b262c;">
+        <!--Nav-Bar at the top of the website!-->
+        <div class="nav-bar">
+            <header>
+                <nav>
+                    <ul>
+                        <li><img class="gitlogo" src="icons/home.png"></li>
+                        <li><a href="https://github.com/joeltomjoseph"><img class="gitlogo" src="icons/GitHub-Mark-32px.png"></a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <!--Main Login Box-->
+        <center>
+        <h1>Welcome</h1>
+            <div class="login-container">
+                <ul>
+                    <li>Enter your UserName</li>
+                    <li><input type="text" id = username placeholder="UserName"></li>
+                    <li>Enter your Password</li>
+                    <li><input type="password" id = password placeholder="........."></li>
+                    <li><input type="button" class="button" onclick="login()" value="Login"></li>
+                </ul>
+            </div>
+        <!--<p id="test"></p>-->
+        </center>
+    </body>
+</html>
